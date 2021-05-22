@@ -9,19 +9,26 @@ use App\Models\contract;
 class PostController extends Controller
 {
     public function showform() {
-        return view('test');
+        return view('create');
     }
     public function validationform(Request $request) {
-        echo "<pre>";
-            print_r($request->all());
-        
-        echo "</pre>";
         // $this->validation($request,[
         //     'name'=>'required|max:50',
         //     'address'=>'required',
         //     'email'=>'required',
         //     'content'=>'required'
         // ]);
+        echo "<pre>";
+            print_r($request->all());
+        
+        echo "</pre>";
+        $validatedData = $request->validate([
+            'name' => ['required', 'max:255', 'alpha'],
+            'address' => ['required'],
+            'email' => ['required', 'max:256', 'email'],
+            'content' => ['required'],
+        ]);
+        
     }
     public function addDatabase(Request $request){
         if($request->isMethod('post')){
@@ -30,12 +37,16 @@ class PostController extends Controller
         $email = $request->input("email");
         $content = $request->input("content");
 
-        // $contract = new contract([
-        //     'name'=>$name,
-        //     'address'=>$address,
-        //     'email'=>$email,
-        //     'content'=>$content
-        // ]);
+        echo "<pre>";
+            print_r($request->all());
+        
+        echo "</pre>";
+        $validatedData = $request->validate([
+            'name' => ['required', 'max:255'],
+            'address' => ['required'],
+            'email' => ['required', 'max:256', 'email'],
+            'content' => ['required'],
+        ]);
         $contract = new contract();
 
         $contract->name = $name;
@@ -44,11 +55,7 @@ class PostController extends Controller
         $contract->content = $content;
             
         $contract->save();
-        echo "<pre>";
-            print_r($request->all());
         
-        echo "</pre>";
-        }
-
     }
+}
 }
