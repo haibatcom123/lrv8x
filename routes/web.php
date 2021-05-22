@@ -19,6 +19,6 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index');
 //Route::get('/create', 'CreatController@create');
 //Route::post('/store', 'CreatController@store');
-Route::get('/admin/create', 'PostController@showform');
+Route::get('/create', 'PostController@showform');
 
-Route::post('/admin/create', 'PostController@validationform') -> name('create');
+Route::post('/show', 'PostController@addDatabase') -> name('create');
