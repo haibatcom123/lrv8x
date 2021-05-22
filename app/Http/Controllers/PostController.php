@@ -38,10 +38,10 @@ class PostController extends Controller
         // ]);
         $contract = new contract();
 
-        $contract->name = "haibatcom123";
-        $contract->address = "haha";
-        $contract->email = "aibatco1123@gmail.com";
-        $contract->content = "thatbai";
+        $contract->name = $name;
+        $contract->address = $address;
+        $contract->email = $email;
+        $contract->content = $content;
             
         $contract->save();
         echo "<pre>";
