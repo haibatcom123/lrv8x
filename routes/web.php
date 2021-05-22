@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('/admin/create');
+    return view('/create');
 });
 Route::get('/home', 'HomeController@index');
 //Route::get('/create', 'CreatController@create');

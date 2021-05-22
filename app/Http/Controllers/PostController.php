@@ -13,9 +13,15 @@ class PostController extends Controller
     }
     public function validationform(Request $request) {
         echo "<pre>";
-            print_r($request->input("content"));
+            print_r($request->all());
         
         echo "</pre>";
+        // $this->validation($request,[
+        //     'name'=>'required|max:50',
+        //     'address'=>'required',
+        //     'email'=>'required',
+        //     'content'=>'required'
+        // ]);
     }
     public function addDatabase(Request $request){
         if($request->isMethod('post')){
@@ -24,15 +30,25 @@ class PostController extends Controller
         $email = $request->input("email");
         $content = $request->input("content");
 
+        // $contract = new contract([
+        //     'name'=>$name,
+        //     'address'=>$address,
+        //     'email'=>$email,
+        //     'content'=>$content
+        // ]);
         $contract = new contract();
-        $contract->name = $name;
-        $contract->address = $address;
-        $contract->email = $email;
-        $contract->content = $content;
 
+        $contract->name = "haibatcom123";
+        $contract->address = "haha";
+        $contract->email = "aibatco1123@gmail.com";
+        $contract->content = "thatbai";
+            
         $contract->save();
-        }
-        return view('test');
+        echo "<pre>";
+            print_r($request->all());
         
+        echo "</pre>";
+        }
+
     }
 }

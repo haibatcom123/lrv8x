@@ -27,7 +27,7 @@
         <p>Email<br>
             <input type="text" name="email" value=""></p>
         <p>Content<br>
-            <textarea rows="5" cols="40" name="content"></textarea></p>
+            <input type="text" name="content" value=""></p>
 
         <p><button type="submit">Submit</button></p>
     </form>
