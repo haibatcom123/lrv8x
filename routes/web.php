@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('create');
+    return view('/admin/create');
 });
 Route::get('/home', 'HomeController@index');
 //Route::get('/create', 'CreatController@create');
 //Route::post('/store', 'CreatController@store');
 Route::get('/admin/create', 'PostController@showform');
-Route::post('/admin/create', 'PostController@validationform');
+
+Route::post('/admin/create', 'PostController@validationform') -> name('create');

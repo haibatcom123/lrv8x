@@ -18,7 +18,7 @@
     </div>
     @endif
 
-    <form method="post" action="/admin/create">
+    <form action="{{router('create')}}" method="post">
         @csrf
         <p>Name<br>
             <input type="text" name="name" value=""></p>
