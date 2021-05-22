@@ -17,8 +17,7 @@ Route::get('/', function () {
     return view('create');
 });
 Route::get('/home', 'HomeController@index');
-Route::get('/create', 'CreatController@create');
-Route::post('/store', 'CreatController@store');
-Route::post('/form', function(Illuminate\Http\Request $request){
-	var_dump($request->all());
-});
+//Route::get('/create', 'CreatController@create');
+//Route::post('/store', 'CreatController@store');
+Route::get('/admin/create', 'PostController@showform');
+Route::post('/admin/create', 'PostController@validationform');
