@@ -35,7 +35,7 @@
 @csrf
     <div class="form-label-group">
         <label for="inputName">Name</label>
-        <input type="text" id="name" class="form-control" name="name" placeholder="e.g. Hoang Duc Truong" autofocus>                                    
+        <input type="text" id="name" class="form-control" name="name" placeholder="e.g. HoangDucTruong" autofocus>                                    
     </div>
     <div class="form-label-group">
         <label for="inputAddress">Address</label>

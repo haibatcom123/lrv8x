@@ -42,7 +42,7 @@ class PostController extends Controller
         
         echo "</pre>";
         $validatedData = $request->validate([
-            'name' => ['required', 'max:255'],
+            'name' => ['required','alpha', 'min:1','max:255'],
             'address' => ['required'],
             'email' => ['required', 'max:256', 'email'],
             'content' => ['required'],
