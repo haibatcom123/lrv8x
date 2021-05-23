@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('/create');
 });
 Route::get('/home', 'HomeController@index');
+Route::get('/login', 'LoginController@showform');
 //Route::get('/create', 'CreatController@create');
 //Route::post('/store', 'CreatController@store');
 Route::get('/create', 'PostController@showform');
