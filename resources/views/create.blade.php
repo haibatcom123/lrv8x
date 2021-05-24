@@ -21,7 +21,7 @@
                         <div class="card-body">
 
                             <head>
-    <h1>Creat a new contract</h1>
+    <h1>{{__('create.Creat a new contract')}}</h1>
     <style type="text/css">
         .error-message { color: red; }
     </style>
@@ -40,33 +40,33 @@
 @csrf
 <div class="container">            
        <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Language Option
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{__('create.Language Option')}}
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="{{route('language',['en'])}}">English</a></li>
-          <li><a href="{{route('language',['vi'])}}">Vietnamese</a></li>
+          <li><a href="{{route('language',$lang)}}">English</a></li>
+          <li><a href="{{route('language',$lang)}}">Vietnamese</a></li>
         </ul>
       </div>
     </div>
     
     <div class="form-label-group">
-        <label for="inputName">{{__('Name')}}</label>
+        <label for="inputName">{{__('create.Name')}}</label>
         <input type="text" id="name" class="form-control" name="name" placeholder="e.g. HoangDucTruong" autofocus>                                    
     </div>
     <div class="form-label-group">
-        <label for="inputAddress">Address</label>
+        <label for="inputAddress">{{__('create.Address')}}</label>
         <input type="text" id="address" class="form-control" name="address" placeholder="Where do you live?" >             
     </div>
     <div class="form-label-group">
-        <label for="inputEmail">Email</label>
+        <label for="inputEmail">{{__('create.Content')}}</label>
         <input type="text" id="email" class="form-control" name="email" placeholder="e.g. haibatcom123@gmail.com" >                                    
     </div>
     <div class="form-label-group">
-        <label for="inputContent">Content</label>
+        <label for="inputContent">{{__('create.Content')}}</label>
         <input type="text" id="content" class="form-control" name="content" placeholder="You must input somehing here!" >             
     </div>
     <br>
-        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="create" name="create">Create</button>
+        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="create" name="create">{{__('create.Create')}}</button>
 
 </form>
 </body>

@@ -18,9 +18,12 @@ Route::get('/', function () {
 });
 Route::get('/home', 'HomeController@index');
 Route::get('/login', 'LoginController@showform');
-//Route::get('/create', 'CreatController@create');
-//Route::post('/store', 'CreatController@store');
-Route::get('language/{locale}', 'LanguageController@index') -> name('language');
+
+//Route::get('language/{locale}', 'LanguageController@index') -> name('language');
+Route::get('/language/{language}', function ($lang) {
+    App::setLocale($lang);
+    return view('/create');
+});
 Route::get('/create', 'PostController@showform');
 
 Route::post('/show', 'PostController@addDatabase') -> name('create');

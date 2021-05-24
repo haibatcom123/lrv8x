@@ -11,9 +11,7 @@ class LanguageController extends Controller
     {
         if($language){
             Session::put('',$language);
-            echo __('Name');
-            echo"$language";
         }
-        //return redirect()->back();
+        return redirect()->back();
     }
 }
