@@ -43,27 +43,28 @@
         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{__('create.Language Option')}}
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="{{route('language',$lang)}}">English</a></li>
-          <li><a href="{{route('language',$lang)}}">Vietnamese</a></li>
+          <li><a href="language/en">English</a></li>
+          <li><a href="language/vi">Tiếng Việt</a></li>
+          <li><a href="language/ja">ジャパニーズ</a></li>
         </ul>
       </div>
     </div>
     
     <div class="form-label-group">
         <label for="inputName">{{__('create.Name')}}</label>
-        <input type="text" id="name" class="form-control" name="name" placeholder="e.g. HoangDucTruong" autofocus>                                    
+        <input type="text" id="name" class="form-control" name="name" placeholder="{{__('create.Name_placeholder')}}" autofocus>                                    
     </div>
     <div class="form-label-group">
         <label for="inputAddress">{{__('create.Address')}}</label>
-        <input type="text" id="address" class="form-control" name="address" placeholder="Where do you live?" >             
+        <input type="text" id="address" class="form-control" name="address" placeholder="{{__('create.Address_placeholder')}}" >             
     </div>
     <div class="form-label-group">
-        <label for="inputEmail">{{__('create.Content')}}</label>
-        <input type="text" id="email" class="form-control" name="email" placeholder="e.g. haibatcom123@gmail.com" >                                    
+        <label for="inputEmail">{{__('create.Email')}}</label>
+        <input type="text" id="email" class="form-control" name="email" placeholder="{{__('create.Email_placeholder')}}" >                                    
     </div>
     <div class="form-label-group">
         <label for="inputContent">{{__('create.Content')}}</label>
-        <input type="text" id="content" class="form-control" name="content" placeholder="You must input somehing here!" >             
+        <input type="text" id="content" class="form-control" name="content" placeholder="{{__('create.Content_placeholder')}}" >             
     </div>
     <br>
         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="create" name="create">{{__('create.Create')}}</button>

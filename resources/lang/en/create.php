@@ -6,6 +6,10 @@
     "Address"=> "Adrress",
     "Email"=> "Email",
     "Content"=> "Content",
-    "Create"=>"Create"
+    "Create"=>"Create",
+    "Name_placeholder"=> "e.g. HoangDucTruong",
+    "Address_placeholder"=> "Where do you live?",
+    "Email_placeholder"=> "e.g. haibatcom123@gmail.com",
+    "Content_placeholder"=> "You must input somehing here!",
     ]
 ?>
