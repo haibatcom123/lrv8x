@@ -20,6 +20,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/login', 'LoginController@showform');
 //Route::get('/create', 'CreatController@create');
 //Route::post('/store', 'CreatController@store');
+Route::get('language/{locale}', 'LanguageController@index') -> name('language');
 Route::get('/create', 'PostController@showform');
 
 Route::post('/show', 'PostController@addDatabase') -> name('create');

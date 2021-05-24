@@ -6,6 +6,11 @@
         <link href="https://fonts.googleapis.com/css?family=Charm|Montserrat" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="./public/css/login.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Result</title>
     </head>
     <body>
@@ -31,10 +36,21 @@
         </ul>
     </div>
     @endif
-<form action="{{ route('create') }}" method="post" >
+<form action="{{route('create') }}" method="post" >
 @csrf
+<div class="container">            
+       <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Language Option
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="{{route('language',['en'])}}">English</a></li>
+          <li><a href="{{route('language',['vi'])}}">Vietnamese</a></li>
+        </ul>
+      </div>
+    </div>
+    
     <div class="form-label-group">
-        <label for="inputName">Name</label>
+        <label for="inputName">{{__('Name')}}</label>
         <input type="text" id="name" class="form-control" name="name" placeholder="e.g. HoangDucTruong" autofocus>                                    
     </div>
     <div class="form-label-group">
