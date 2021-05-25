@@ -35,7 +35,7 @@
             @endforeach
         </ul>
     </div>
-    @endif
+@endif
 <form action="{{route('create') }}" method="post" >
 @csrf
 <div class="container">            

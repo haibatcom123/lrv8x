@@ -16,15 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('/create');
 });
+
 Route::get('/home', 'HomeController@index');
-Route::get('/login', 'LoginController@showform');
-
-
-// Route::get('/language/{language}', function ($lang) {
-//     App::setLocale($lang);
-//     return view('/create');
-// });
 Route::get('/create', 'PostController@showform');
-
 Route::post('/show', 'PostController@addDatabase') -> name('create');
 Route::get('language/{locale}', 'LanguageController@index') -> name('language');
+
+
+//Route::get('/login', 'LoginController@index');
+Route::group(['middleware'=>'auth'],function(){
+    Route::match(['get','post'],'login',[ 'as' => 'login', 'user'=> 'LoginController@index']);
+});

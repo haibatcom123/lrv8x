@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <!-- Head -->
@@ -28,12 +28,20 @@
 <body>
 
 	<h1>EXISTING LOGIN FORM</h1>
-
+@if (count($errors) > 0)
+    <div class="error-message">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 	<div class="w3layoutscontaineragileits">
 	<h2>Login here</h2>
-		<form action="#" method="post">
-			<input type="email" Name="Username" placeholder="EMAIL" required="">
-			<input type="password" Name="Password" placeholder="PASSWORD" required="">
+		<form action="{{route('login') }}" method="post">
+			<input type="email" Name="email" placeholder="EMAIL" required="">
+			<input type="password" Name="password" placeholder="PASSWORD" required="">
 			<ul class="agileinfotickwthree">
 				<li>
 					<input type="checkbox" id="brand1" value="">
@@ -91,9 +99,7 @@
 	</div>
 	<!-- //for register popup -->
 	
-	<div class="w3footeragile">
-		<p> &copy; 2017 Existing Login Form. All Rights Reserved | Design by <a href="http://w3layouts.com" target="_blank">W3layouts</a></p>
-	</div>
+	
 
 	
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
