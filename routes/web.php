@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('/create');
+    return view('/dashboard');
 });
 
 Route::get('/home', 'HomeController@index');
@@ -24,6 +24,10 @@ Route::get('language/{locale}', 'LanguageController@index') -> name('language');
 
 
 //Route::get('/login', 'LoginController@index');
-Route::group(['middleware'=>'auth'],function(){
-    Route::match(['get','post'],'login',[ 'as' => 'login', 'user'=> 'LoginController@index']);
-});
+// Route::group(['middleware'=>'auth'],function(){
+//     Route::match(['get','post'],'login',[ 'as' => 'login', 'user'=> 'LoginController@index']);
+// });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
